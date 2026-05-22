@@ -1,0 +1,30 @@
+{
+  "name": "@facile/enveloppe",
+  "version": "0.1.0",
+  "description": "Canonical event envelope for the Facile Suite",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "bun run build"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FacileStudio/enveloppe.git",
+    "directory": "ts"
+  },
+  "license": "MIT"
+}
