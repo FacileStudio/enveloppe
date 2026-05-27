@@ -5,7 +5,7 @@ type App string
 const (
 	AppSablier  App = "sablier"
 	AppOpus     App = "opus"
-	AppCharles  App = "charles"
+	AppArdoise  App = "ardoise"
 	AppPlume    App = "plume"
 	AppGlouton  App = "glouton"
 	AppVision   App = "vision"
