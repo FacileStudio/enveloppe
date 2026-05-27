@@ -18,6 +18,7 @@ export interface FacileProject {
   facile_id: string;
   name: string;
   description: string | null;
+  icon: string | null;
 }
 
 export interface FacileTask {
