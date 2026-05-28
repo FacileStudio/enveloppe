@@ -1,4 +1,4 @@
-export type FacileApp = "sablier" | "opus" | "ardoise" | "plume" | "glouton" | "vision";
+export type FacileApp = "Sablier" | "Opus" | "Ardoise" | "Plume" | "Glouton" | "Vision";
 
 export type FacileAction = "created" | "updated" | "deleted";
 
