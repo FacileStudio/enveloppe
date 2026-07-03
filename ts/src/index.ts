@@ -26,6 +26,7 @@ export interface FacileTask {
   project_facile_id: string;
   name: string;
   status: string;
+  actor_email?: string;
 }
 
 export interface FacileUser {

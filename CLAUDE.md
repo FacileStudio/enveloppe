@@ -44,7 +44,7 @@ go get github.com/FacileStudio/enveloppe/go
 
 ## Domain Model
 
-Six Facile apps: `sablier`, `opus`, `charles`, `plume`, `glouton`, `vision`
+Six Facile apps: `Sablier`, `Opus`, `Ardoise`, `Plume`, `Glouton`, `Vision`
 
 Three actions: `created`, `updated`, `deleted`
 
