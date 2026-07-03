@@ -5,6 +5,7 @@ export type FacileAction = "created" | "updated" | "deleted";
 export type FacileObjectType = "project" | "task" | "user" | "time_entry" | "invoice" | "document";
 
 export interface FacileEvent<T = unknown> {
+  version: number;
   app: FacileApp;
   object: FacileObjectType;
   action: FacileAction;
@@ -13,6 +14,8 @@ export interface FacileEvent<T = unknown> {
   timestamp: string;
   idempotency_key: string;
 }
+
+export const FACILE_EVENT_VERSION = 1;
 
 export interface FacileProject {
   facile_id: string;
@@ -39,6 +42,7 @@ export interface FacileTimeEntry {
   facile_id: string;
   task_facile_id: string;
   user_facile_id: string;
+  user_email?: string;
   started_at: string;
   stopped_at: string | null;
 }
