@@ -1,8 +1,15 @@
-export type FacileApp = "Sablier" | "Opus" | "Ardoise" | "Plume" | "Glouton" | "Vision";
+export type FacileApp = "Sablier" | "Opus" | "Ardoise" | "Plume" | "Glouton" | "Vision" | "Mycelium";
 
 export type FacileAction = "created" | "updated" | "deleted";
 
-export type FacileObjectType = "project" | "task" | "user" | "time_entry" | "invoice" | "document";
+export type FacileObjectType =
+  | "project"
+  | "task"
+  | "user"
+  | "time_entry"
+  | "invoice"
+  | "document"
+  | "agent_session";
 
 export interface FacileEvent<T = unknown> {
   version: number;
@@ -45,6 +52,19 @@ export interface FacileTimeEntry {
   user_email?: string;
   started_at: string;
   stopped_at: string | null;
+}
+
+export interface FacileAgentSession {
+  facile_id: string;
+  project: string;
+  machine: string;
+  agent: string;
+  branch?: string;
+  user_email: string;
+  started_at: string;
+  stopped_at: string;
+  tokens_in: number;
+  tokens_out: number;
 }
 
 export interface FacileInvoice {

@@ -44,11 +44,16 @@ go get github.com/FacileStudio/enveloppe/go
 
 ## Domain Model
 
-Six Facile apps: `Sablier`, `Opus`, `Ardoise`, `Plume`, `Glouton`, `Vision`
+Seven Facile apps: `Sablier`, `Opus`, `Ardoise`, `Plume`, `Glouton`, `Vision`, `Mycelium`
 
 Three actions: `created`, `updated`, `deleted`
 
-Six object types: `project`, `task`, `user`, `time_entry`, `invoice`, `document`
+Seven object types: `project`, `task`, `user`, `time_entry`, `invoice`, `document`, `agent_session`
+
+`agent_session` is emitted by Mycelium: one event per sealed block of AI-agent activity in a
+project (machine, agent, branch, user_email, started/stopped, token totals). Sablier
+listens and materializes these as time entries; Mycelium never emits `time_entry` itself —
+that object belongs to Sablier.
 
 The `FacileEvent<T>` / `Event[T]` generic envelope wraps any domain object with metadata: app, object type, action, facile_id, payload, timestamp, and idempotency_key.
 
