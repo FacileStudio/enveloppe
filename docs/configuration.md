@@ -8,7 +8,7 @@ those are what this page documents.
 
 None. Neither `go/enveloppe.go` nor `ts/src/index.ts` reads the environment, opens a file, or
 makes a network call. If a consumer needs configuration to *send* an event, that belongs to
-[pool](https://github.com/FacileStudio/pool) — see its `nook.yaml` reference.
+[antenne-client](https://github.com/FacileStudio/antenne-client) — see its `nook.yaml` reference.
 
 ## Go consumers
 

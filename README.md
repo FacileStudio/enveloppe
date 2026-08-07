@@ -4,7 +4,7 @@ The canonical event envelope for the Facile Suite — the shared type contract e
 talk through Nook, published as `@facile/enveloppe` in TypeScript and `enveloppe` in Go.
 
 Types only. No runtime logic, no validation, no dependencies in either language. This repo is
-the contract, not the implementation; [pool](https://github.com/FacileStudio/pool) is the wire
+the contract, not the implementation; [antenne-client](https://github.com/FacileStudio/antenne-client) is the wire
 that carries it.
 
 ## What it does
