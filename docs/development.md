@@ -47,7 +47,7 @@ pseudo-version; Sablier and Mycelium are both on `v0.0.0-20260804090730-02b0f4b2
 
 **TypeScript — currently not installable.** `package.json` and the historical install
 instructions expect `bun add github:FacileStudio/enveloppe#ts`, mirroring the arrangement in
-[pool](https://github.com/FacileStudio/pool), where a `ts` branch holds the contents of `ts/`
+[antenne-client](https://github.com/FacileStudio/antenne-client), where a `ts` branch holds the contents of `ts/`
 at the repository root so Bun can find a `package.json` there.
 
 **That branch has never been published.** `FacileStudio/enveloppe` has exactly one branch,
