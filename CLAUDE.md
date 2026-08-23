@@ -44,11 +44,15 @@ go get github.com/FacileStudio/enveloppe/go
 
 ## Domain Model
 
-Seven Facile apps: `Sablier`, `Opus`, `Ardoise`, `Plume`, `Glouton`, `Vision`, `Mycelium`
+Eight Facile apps: `Sablier`, `Opus`, `Ardoise`, `Plume`, `Glouton`, `Vision`, `Mycelium`, `Sonde`
 
 Three actions: `created`, `updated`, `deleted`
 
-Seven object types: `project`, `task`, `user`, `time_entry`, `invoice`, `document`, `agent_session`
+Eight object types: `project`, `task`, `user`, `time_entry`, `invoice`, `document`, `agent_session`, `monitor`
+
+`monitor` is emitted by Sonde: one event per uptime probe state change (slug, name,
+up/down status, latency, last error). Antenne consumes these for alert fan-out; no other
+app emits `monitor`.
 
 `agent_session` is emitted by Mycelium: one event per sealed block of AI-agent activity in a
 project (machine, agent, branch, user_email, started/stopped, token totals). Sablier

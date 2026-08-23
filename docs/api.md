@@ -12,7 +12,7 @@ marked nullable is always present and carries `null` when empty.
 
 ### `app` — `enveloppe.App` / `FacileApp`
 
-Seven values. Go exports one constant each; TypeScript is a string-literal union.
+Eight values. Go exports one constant each; TypeScript is a string-literal union.
 
 | Value | Go constant |
 |---|---|
@@ -23,6 +23,7 @@ Seven values. Go exports one constant each; TypeScript is a string-literal union
 | `Glouton` | `AppGlouton` |
 | `Vision` | `AppVision` |
 | `Mycelium` | `AppMycelium` |
+| `Sonde` | `AppSonde` |
 
 Capitalized exactly as shown — `Sablier`, not `sablier`. Both halves agree.
 
@@ -36,7 +37,7 @@ Capitalized exactly as shown — `Sablier`, not `sablier`. Both halves agree.
 
 ### `object` — `enveloppe.ObjectType` / `FacileObjectType`
 
-Seven values, one per payload type below.
+Eight values, one per payload type below.
 
 | Value | Go constant | Payload type |
 |---|---|---|
@@ -47,6 +48,7 @@ Seven values, one per payload type below.
 | `invoice` | `ObjectInvoice` | `Invoice` / `FacileInvoice` |
 | `document` | `ObjectDocument` | `Document` / `FacileDocument` |
 | `agent_session` | `ObjectAgentSession` | `AgentSession` / `FacileAgentSession` |
+| `monitor` | `ObjectMonitor` | `Monitor` / `FacileMonitor` |
 
 Nothing in the contract ties an `object` value to its payload type. `Event[T]` and
 `FacileEvent<T>` are generic over `T` and will happily carry a mismatched pair.
@@ -150,6 +152,20 @@ producer that cannot supply one. Making it `omitempty` is a known outstanding fi
 | `title` | string | yes | |
 | `status` | string | yes | Free-form |
 | `signer_email` | string | yes | |
+
+### `monitor` — `Monitor` / `FacileMonitor`
+
+One event per uptime probe state change. Emitted by Sonde, consumed by Antenne.
+
+| JSON key | Type | Required | Notes |
+|---|---|---|---|
+| `monitor_id` | string | yes | Sonde's own row ID, alongside the usual cross-app join key |
+| `facile_id` | string | yes | |
+| `slug` | string | yes | URL-safe identifier, also used by public status pages |
+| `name` | string | yes | Human label |
+| `status` | string | yes | `"up"` or `"down"`; free-form `string` in Go, literal union in TS |
+| `latency_ms` | number | yes | Last probe latency; `0` on a failed probe; `int64` in Go |
+| `error` | string \| null | yes, nullable | Last failure message; `null` while the monitor is up |
 
 ## Cross-language differences
 

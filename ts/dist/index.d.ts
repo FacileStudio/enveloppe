@@ -1,6 +1,6 @@
-export type FacileApp = "Sablier" | "Opus" | "Ardoise" | "Plume" | "Glouton" | "Vision" | "Mycelium";
+export type FacileApp = "Sablier" | "Opus" | "Ardoise" | "Plume" | "Glouton" | "Vision" | "Mycelium" | "Sonde";
 export type FacileAction = "created" | "updated" | "deleted";
-export type FacileObjectType = "project" | "task" | "user" | "time_entry" | "invoice" | "document" | "agent_session";
+export type FacileObjectType = "project" | "task" | "user" | "time_entry" | "invoice" | "document" | "agent_session" | "monitor";
 export interface FacileEvent<T = unknown> {
     version: number;
     app: FacileApp;
@@ -62,4 +62,13 @@ export interface FacileDocument {
     title: string;
     status: string;
     signer_email: string;
+}
+export interface FacileMonitor {
+    monitor_id: string;
+    facile_id: string;
+    slug: string;
+    name: string;
+    status: "up" | "down";
+    latency_ms: number;
+    error: string | null;
 }
