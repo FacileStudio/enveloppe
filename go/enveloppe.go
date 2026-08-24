@@ -4,14 +4,14 @@ package enveloppe
 type App string
 
 const (
-	AppSablier App = "Sablier"
-	AppOpus    App = "Opus"
-	AppArdoise App = "Ardoise"
-	AppPlume   App = "Plume"
-	AppGlouton App = "Glouton"
-	AppVision  App = "Vision"
-	AppMycelium  App = "Mycelium"
-	AppSonde   App = "Sonde"
+	AppSablier  App = "Sablier"
+	AppOpus     App = "Opus"
+	AppArdoise  App = "Ardoise"
+	AppPlume    App = "Plume"
+	AppGlouton  App = "Glouton"
+	AppVision   App = "Vision"
+	AppMycelium App = "Mycelium"
+	AppSonde    App = "Sonde"
 )
 
 // Action is what happened to an object: created, updated or deleted.

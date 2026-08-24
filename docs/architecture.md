@@ -9,15 +9,15 @@ model the whole contract rests on.
 disappears at build time — the only thing that exists at runtime is the JSON it describes.
 
 ```
-Mycelium (Go)  ──┐ enveloppe.Event[AgentSession]
-Sablier (Go) ──┤ marshaled to JSON
-Opus (TS)    ──┘        │
-                        ▼
-                     pool client  ──▶ WS ──▶ Nook Pool ──▶ WS ──▶ pool client
-                                                                       │
-                        ┌──────────────────────────────────────────────┘
-                        ▼
-              FacileEvent<T> / Event[T]  unmarshaled by the receiving app
+Mycelium (Go) ──┐ enveloppe.Event[AgentSession]
+Sablier (Go)  ──┤ marshaled to JSON
+Opus (TS)     ──┘        │
+                         ▼
+                      pool client  ──▶ WS ──▶ Nook Pool ──▶ WS ──▶ pool client
+                                                                        │
+                         ┌──────────────────────────────────────────────┘
+                         ▼
+               FacileEvent<T> / Event[T]  unmarshaled by the receiving app
 ```
 
 Three repos, one contract:
