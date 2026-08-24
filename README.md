@@ -10,8 +10,8 @@ that carries it.
 ## What it does
 
 - Defines `FacileEvent<T>` / `Event[T]`, the envelope wrapping every cross-app event
-- Names the seven apps, three actions and seven object types that may appear on the wire
-- Defines the seven domain payload shapes, one per object type
+- Names the eight apps, three actions and eight object types that may appear on the wire
+- Defines the eight domain payload shapes, one per object type
 - Pins the envelope version as a constant both languages export
 - Keeps `facile_id` as the canonical cross-app join key on every domain object
 - Guarantees the two implementations serialize to identical JSON keys

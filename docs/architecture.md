@@ -81,6 +81,7 @@ so most of the enum is declared ahead of any producer.
 | `task` | Sablier, Opus | Same pair |
 | `time_entry` | Sablier | Mycelium **never** emits this, though it produces the raw activity |
 | `agent_session` | Mycelium | One event per sealed block of AI-agent activity |
+| `monitor` | Sonde | One event per uptime probe state change; Antenne consumes it for alerting |
 | `user`, `invoice`, `document` | nobody yet | Declared in the contract; no importer emits them |
 
 Likewise, `Ardoise`, `Plume`, `Glouton` and `Vision` are valid values of `app` but do not

@@ -4,13 +4,14 @@ package enveloppe
 type App string
 
 const (
-	AppSablier  App = "Sablier"
-	AppOpus     App = "Opus"
-	AppArdoise  App = "Ardoise"
-	AppPlume    App = "Plume"
-	AppGlouton  App = "Glouton"
-	AppVision   App = "Vision"
-	AppMycelium   App = "Mycelium"
+	AppSablier App = "Sablier"
+	AppOpus    App = "Opus"
+	AppArdoise App = "Ardoise"
+	AppPlume   App = "Plume"
+	AppGlouton App = "Glouton"
+	AppVision  App = "Vision"
+	AppMycelium  App = "Mycelium"
+	AppSonde   App = "Sonde"
 )
 
 // Action is what happened to an object: created, updated or deleted.
@@ -34,6 +35,7 @@ const (
 	ObjectInvoice      ObjectType = "invoice"
 	ObjectDocument     ObjectType = "document"
 	ObjectAgentSession ObjectType = "agent_session"
+	ObjectMonitor      ObjectType = "monitor"
 )
 
 // EventVersion pins the envelope version both implementations export.
@@ -114,4 +116,16 @@ type Document struct {
 	Title       string `json:"title"`
 	Status      string `json:"status"`
 	SignerEmail string `json:"signer_email"`
+}
+
+// Monitor is one uptime probe's wire shape. Status is "up" or "down";
+// Error carries the last failure message and is null when the monitor is up.
+type Monitor struct {
+	MonitorID string  `json:"monitor_id"`
+	FacileID  string  `json:"facile_id"`
+	Slug      string  `json:"slug"`
+	Name      string  `json:"name"`
+	Status    string  `json:"status"`
+	LatencyMS int64   `json:"latency_ms"`
+	Error     *string `json:"error"`
 }
