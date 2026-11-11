@@ -1,6 +1,6 @@
 {
   "name": "@facile/enveloppe",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Canonical event envelope for the Facile Suite",
   "type": "module",
   "main": "./dist/index.js",
