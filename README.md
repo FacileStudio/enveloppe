@@ -21,7 +21,7 @@ that carries it.
 | Layer | Tech |
 |---|---|
 | Runtime | TypeScript 5.8, ES2020/NodeNext, declaration-only output, no dependencies |
-| Runtime | Go 1.24, structs and constants with JSON tags, no dependencies |
+| Runtime | Go 1.26.11, structs and constants with JSON tags, no dependencies |
 
 ## Install
 

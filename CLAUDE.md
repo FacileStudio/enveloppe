@@ -5,7 +5,7 @@ Canonical event envelope for the Facile Suite. Defines the shared type contract 
 ## Tech Stack
 
 - **TypeScript** (types-only library) -- compiled with `tsc`, packaged via bun, targets ES2020 with NodeNext module resolution
-- **Go** (types-only package) -- Go 1.24, pure struct/const definitions with JSON tags, no dependencies
+- **Go** (types-only package) -- Go 1.26.11, pure struct/const definitions with JSON tags, no dependencies
 - No runtime logic in either implementation. This is a pure schema/contract library.
 
 ## Project Structure
